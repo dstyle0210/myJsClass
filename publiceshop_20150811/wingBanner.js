@@ -1,6 +1,8 @@
 /**
  * 윙베너 하단 버블베너 영역 UI구현
- * 
+ * wingBanner.open(boolean) => 윙베너 열림 , boolean : true 시 열렸다가 closeTime 이후 닫힘 , null의 경우 그냥 열린 상태로 유지.
+ * wingBanner.close() => 윙베너 닫힘
+ * wingBanner.remove() => 윙베너 삭제(DOM remove)
  */
 var wingBannerIndex = 0; // 생성인자에 따라 ID가 늘어남.
 function wingBannerClass(opt){
