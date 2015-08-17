@@ -21,8 +21,14 @@ mainPopupBannerClass.prototype.init = function(opt){
 			This.arr.push(opt[i]);
 		};
 	});
-	// 좌측위치 정제 및 삽입.
+	
+	
 	$(This.arr).each(function(i){
+		// 데이터 type에 맞추어 정제
+		this.width = (this.width)*1;
+		this.height = (this.height)*1;
+		
+		// 좌측위치 정제 및 삽입.
 		var left = 0;
 		for(k=i;0<k;--k){
 			left = left + This.arr[k-1].width + 10;
@@ -45,9 +51,9 @@ mainPopupBannerClass.prototype.makePopup = function(hash,idx){
 	"div label{margin-left:5px;color:#fff}"+
 	"</style>";
 	if(hash.url==""){
-		str += "<img src='"+hash.img+"' />";
+		str += "<img src='"+hash.img+"' width='"+hash.width+"' height='"+hash.height+"' />";
 	}else{
-		str += "<a href='"+hash.url+"' onclick='window.opener.location=this.href;self.close();'><img src='"+hash.img+"' /></a>";
+		str += "<a href='"+hash.url+"' onclick='window.opener.location=this.href;self.close();'><img src='"+hash.img+"' width='"+hash.width+"' height='"+hash.height+"' /></a>";
 	};
 	str += "<div>" +
 		"<input type='checkbox' onclick='opener.mainPopupBannerClassSetCookie(\""+hash.pid+"cookie\");self.close();' />" +
